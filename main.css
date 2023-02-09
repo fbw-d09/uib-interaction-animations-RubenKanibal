@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(170, 233, 75);
+    display: grid;
+    gap: 0.5em;
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.strobe {
+    background-color: rgb(250, 250, 250);
+}
+
+.strobe:first-child:hover {
+    background-color: yellow;
+}
+
+.strobe:nth-child(2):hover {
+    background-color: yellow;
+    transition: 1s;
+}
+
+.strobe:nth-child(3):hover {
+    background-color: yellow;
+    transition: 2s;
+}
+
+.strobe:nth-child(4):hover {
+    animation-name: flashing;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1s;
+}
+
+.strobe:last-child {
+    animation-name: flashing;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-duration: 1s;
+}
+
+@keyframes flashing {
+    from {
+        background-color: white;
+    }
+    to {
+        background-color: yellow;
+    }
+}
